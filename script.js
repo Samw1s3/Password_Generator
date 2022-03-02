@@ -1,12 +1,5 @@
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
-
-const inputPasswordLowerCase = window.confirm("Include lower case letters?");
-const inputPasswordUpperCase = window.confirm("Include upper case letters?");
-const InputPasswordSpecialCharc = window.confirm("Include special characters?");
-
-const inputPasswordlength = prompt("How many characters would you like your password to be?", "type number from 8-120 here");
-
 const textareaPassword = document.getElementById("password");
 const divError = document.getElementById(div-error);
 
@@ -15,8 +8,19 @@ const uppercaseSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const symbolsSet = "!@#$%^&*_+-="
 const numbersSet = "0123456789"
 
+function generatePassword() {
+  const inputPasswordlength = prompt("How many characters would you like your password to be?", "type number from 8-120 here");
+  const inputPasswordLowerCase = window.confirm("Include lower case letters?");
+  const inputPasswordUpperCase = window.confirm("Include upper case letters?");
+  const InputPasswordSpecialCharc = window.confirm("Include special characters?"); 
+}
+
+function writePassword() {
+  var password = generatePassword();
+  textareaPassword.textContent = password;
+
 // When the button is clicked 
-generateBtn.addEventListener("click", function() {
+generateBtn.addEventListener("click", writePassword 
 
   const passwordLength = Number(inputPasswordLength)
  
@@ -69,7 +73,7 @@ for (let index = 0; index < passwordLength; index++) {
 
 // show password on webpage
 
-textareaPassword.textContent = password;
+
 
 
 
@@ -86,8 +90,7 @@ inputpasswordLength.addEventListener( 'input', function(event){
 
 
 
-function writePassword() {
-  var password = generatePassword();
+
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
