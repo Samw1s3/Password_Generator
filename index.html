@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+     <input type = "button"  value = "Click Me"  onclick = "functionAlert();" />
+
     <div class="wrapper">
       <header>
         <h1>Password Generator</h1>
@@ -24,8 +26,12 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
+
+        <div class="error" id="div-error">
+          
+        </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button id="generate" class="btn" onclick="myFunction()">Generate Password</button>
         </div>
       </div>
     </div>
