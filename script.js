@@ -1,105 +1,162 @@
 // Assignment Code
-const generateBtn = document.querySelector("#generate");
+
 const textareaPassword = document.getElementById("password");
-const divError = document.getElementById(div-error);
+const divError = document.getElementById("div-error");
 
 const lowercaseSet = "abcdefghijklmnopqrstuvwxyz"
 const uppercaseSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const symbolsSet = "!@#$%^&*_+-="
 const numbersSet = "0123456789"
 
-function generatePassword() {
-  const inputPasswordlength = prompt("How many characters would you like your password to be?", "type number from 8-120 here");
-  const inputPasswordLowerCase = window.confirm("Include lower case letters?");
-  const inputPasswordUpperCase = window.confirm("Include upper case letters?");
-  const InputPasswordSpecialCharc = window.confirm("Include special characters?"); 
-}
 
-function writePassword() {
-  var password = generatePassword();
-  textareaPassword.textContent = password;
+const generateBtn = document.querySelector("#generate");
+function generatePassword(){
+  const passwordLength = prompt("How many characters would you like your password to be?", "type number from 8-120 here");
+  const wantsLowerCase = window.confirm("Include lower case letters?");
+  const wantsUpperCase = window.confirm("Include upper case letters?");
+  const wantsSymbols = window.confirm("Include special characters?");
+  const wantsNumbers = window.confirm("Include numbers?");
 
-// When the button is clicked 
-generateBtn.addEventListener("click", writePassword 
+  console.log(passwordLength, wantsLowerCase, wantsUpperCase, wantsNumbers, wantsNumbers)
+  
+  var charset = "";
 
-  const passwordLength = Number(inputPasswordLength)
- 
-
-  let charset = "";
-
-  //const wantsLowercase =  
- // const wantsUppercase = 
-  //const wantsSymbols = 
-  //const wantsNumbers = 
-
-
-  // in my password
-
-  if(!wantsLowercase && !wantsUppercase && !wantsSymbols && !wantsNumbers ){
-    // show alert
-    divError.textContent = "Please confirm at lease 1 selection";
-    return;
-  }
-  // Once user has confirmed selections
-
-  if(wantsLowercase){
+  if (wantsLowerCase) {
     charset = charset + lowercaseSet;
   }
-  if(wantsUppercase){
+  if (wantsUpperCase) {
     charset = charset + uppercaseSet;
   }
-  if(wantsSymbols){
+  if (wantsSymbols) {
     charset = charset + symbolsSet;
   }
-  if(wantsNumbers){
+  if (wantsNumbers) {
     charset = charset + numbersSet;
   }
-})
 
-//then the app will generate a password
+  for (let index = 0; index < passwordLength; index++) {
+      const randomIndex = Math.floor(Math.random() * charset.length)
 
-  let password = "";
+      const randomChar = charset[randomIndex];
 
+      charset = charset + randomChar;
+  }
+  
+  console.log(charset);
 
-//loop for each passwordLength times,
+  return charset;
 
-for (let index = 0; index < passwordLength; index++) {
-  const randomIndex = Math.floor(Math.random() * charset.length)
-
-  const randomChar = charset[randomIndex];
-
-  password = password + randomChar;
+  
 }
 
-// show password on webpage
-
-
-
-
-
-
-
-
-// When the user inputs a number for the length of that password
-
-inputpasswordLength.addEventListener( 'input', function(event){
-
-});
-
-
-
-
-
-
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-
-
-
-
-
-
 }
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Assignment Code
+
+
+// function generatePassword() {
+//   const inputPasswordlength = prompt("How many characters would you like your password to be?", "type number from 8-120 here");
+//   const inputPasswordLowerCase = window.confirm("Include lower case letters?");
+//   const inputPasswordUpperCase = window.confirm("Include upper case letters?");
+//   const InputPasswordSpecialCharc = window.confirm("Include special characters?");
+  
+//   if (!wantsLowercase && !wantsUppercase && !wantsSymbols && !wantsNumbers) {
+//     // show alert
+//     divError.textContent = "Please confirm at lease 1 selection";
+//     return;
+//   }
+//   // Once user has confirmed selections
+
+
+// })
+// }
+// generateBtn.addEventListener("click", writePassword);
+// function writePassword() {
+//   var password = generatePassword();
+//   textareaPassword.textContent = password;
+// }
+//   // When the button is clicked 
+
+
+//   const passwordLength = Number(inputPasswordLength)
+
+
+//   let charset = "";
+
+//   // in my password
+
+  
+
+// //then the app will generate a password
+
+// let password = "";
+
+
+// //loop for each passwordLength times,
+
+
+// }
+
+// // show password on webpage
+
+
+
+
+
+
+
+
+// // When the user inputs a number for the length of that password
+
+// inputpasswordLength.addEventListener('input', function (event) {
+
+// });
+
+
+
+
+
+
+// var passwordText = document.querySelector("#password");
+
+// passwordText.value = password;
+
+
+
+
+
+
+
+// }
 
