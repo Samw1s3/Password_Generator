@@ -11,7 +11,7 @@ const numbersSet = "0123456789"
 
 const generateBtn = document.querySelector("#generate");
 function generatePassword(){
-  const passwordLength = prompt("How many characters would you like your password to be?", "type number from 8-120 here");
+  const passwordLength = (prompt("How many characters would you like your password to be?", "type number from 8-120 here"));
   const wantsLowerCase = window.confirm("Include lower case letters?");
   const wantsUpperCase = window.confirm("Include upper case letters?");
   const wantsSymbols = window.confirm("Include special characters?");
@@ -19,20 +19,42 @@ function generatePassword(){
 
   console.log(passwordLength, wantsLowerCase, wantsUpperCase, wantsNumbers, wantsNumbers)
   
-  var charset = "";
+
+
+  
+var charset = "";
 
   if (wantsLowerCase) {
-    charset = charset + lowercaseSet;
+     charset = charset + lowercaseSet;
   }
   if (wantsUpperCase) {
-    charset = charset + uppercaseSet;
+      charset = charset + uppercaseSet;
   }
   if (wantsSymbols) {
-    charset = charset + symbolsSet;
+      charset = charset + symbolsSet;
   }
   if (wantsNumbers) {
-    charset = charset + numbersSet;
+     charset = charset + numbersSet;
   }
+
+  if (passwordLength < 7) {
+    // show alert
+    divError.textContent = "Please enter a number from 8 - 120";
+    return;
+  }
+
+  if (passwordLength > 120) {
+    // show alert
+    divError.textContent = "Please enter a number from 8 - 120";
+    return;
+  }
+
+  if (!wantsLowerCase && !wantsUpperCase && !wantsSymbols && !wantsNumbers) {
+    // show alert
+    divError.textContent = "Please confirm at lease 1 selection";
+    return;
+  }
+console.log(charset);
 
   for (let index = 0; index < passwordLength; index++) {
       const randomIndex = Math.floor(Math.random() * charset.length)
@@ -42,7 +64,7 @@ function generatePassword(){
       charset = charset + randomChar;
   }
   
-  console.log(charset);
+  
 
   return charset;
 
@@ -91,10 +113,7 @@ generateBtn.addEventListener("click", writePassword);
 //   const inputPasswordUpperCase = window.confirm("Include upper case letters?");
 //   const InputPasswordSpecialCharc = window.confirm("Include special characters?");
   
-//   if (!wantsLowercase && !wantsUppercase && !wantsSymbols && !wantsNumbers) {
-//     // show alert
-//     divError.textContent = "Please confirm at lease 1 selection";
-//     return;
+  
 //   }
 //   // Once user has confirmed selections
 
