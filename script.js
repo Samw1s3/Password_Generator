@@ -11,7 +11,8 @@ const numbersSet = "0123456789"
 
 const generateBtn = document.querySelector("#generate");
 function generatePassword(){
-  const passwordLength = (prompt("How many characters would you like your password to be?", "type number from 8-120 here"));
+  
+  const passwordLength = prompt("How many characters would you like your password to be?", "type number from 8-120 here");
   const wantsLowerCase = window.confirm("Include lower case letters?");
   const wantsUpperCase = window.confirm("Include upper case letters?");
   const wantsSymbols = window.confirm("Include special characters?");
@@ -22,7 +23,8 @@ function generatePassword(){
 
 
   
-var charset = "";
+  var charset = '';
+  var password = '';
 
   if (wantsLowerCase) {
      charset = charset + lowercaseSet;
@@ -39,11 +41,11 @@ var charset = "";
 
   if (passwordLength < 7) {
     // show alert
-    divError.textContent = "Please enter a number from 8 - 120";
+    divError.textContent = "Please enter a number from 8 - 128";
     return;
   }
 
-  if (passwordLength > 120) {
+  if (passwordLength > 128) {
     // show alert
     divError.textContent = "Please enter a number from 8 - 120";
     return;
@@ -54,19 +56,20 @@ var charset = "";
     divError.textContent = "Please confirm at lease 1 selection";
     return;
   }
-console.log(charset);
+
+  console.log(charset);
+
+  charset = charset.split('')
 
   for (let index = 0; index < passwordLength; index++) {
-      const randomIndex = Math.floor(Math.random() * charset.length)
+      const randomIndex = Math.floor(Math.random() * charset.length);
 
       const randomChar = charset[randomIndex];
 
-      charset = charset + randomChar;
+      password += randomChar;
   }
   
-  
-
-  return charset;
+return password;
 
   
 }
