@@ -8,7 +8,7 @@ const uppercaseSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const symbolsSet = "!@#$%^&*_+-="
 const numbersSet = "0123456789"
 
-
+// Generate password button
 const generateBtn = document.querySelector("#generate");
 function generatePassword(){
   
@@ -18,6 +18,7 @@ function generatePassword(){
   const wantsSymbols = window.confirm("Include special characters?");
   const wantsNumbers = window.confirm("Include numbers?");
 
+  // check the confirms
   console.log(passwordLength, wantsLowerCase, wantsUpperCase, wantsNumbers, wantsNumbers)
   
 
@@ -83,7 +84,7 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+// event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 

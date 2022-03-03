@@ -31,6 +31,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* Card style*/
 .card {
   background-color: #FFCF56;
   border-radius: 5px;
@@ -72,7 +73,7 @@ header {
   display: block;
   clear: both;
 }
-
+/* button styling */
 .btn {
   border: none;
   background-color: #3AB795;
@@ -96,6 +97,7 @@ button[disabled] {
   background: #c0c7cf;
 }
 /* alert popup*/
+
 #confirm {
   display: none;
   background-color: #91FF00;
@@ -137,7 +139,7 @@ button[disabled] {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 85px;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -155,7 +157,7 @@ button[disabled] {
   }
 
   #password {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 }
 
