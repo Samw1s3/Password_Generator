@@ -12,7 +12,7 @@ const numbersSet = "0123456789"
 const generateBtn = document.querySelector("#generate");
 function generatePassword(){
   
-  const passwordLength = prompt("How many characters would you like your password to be?", "type number from 8-120 here");
+  const passwordLength = prompt("How many characters would you like your password to be?", "type number from 8-128 here");
   const wantsLowerCase = window.confirm("Include lower case letters?");
   const wantsUpperCase = window.confirm("Include upper case letters?");
   const wantsSymbols = window.confirm("Include special characters?");
